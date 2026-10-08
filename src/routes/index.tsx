@@ -35,6 +35,9 @@ import fireTruckImage from "@/assets/fire-truck-about.jpg";
 import {
   EMAIL,
   PHONE,
+  PHONE_SECONDARY,
+  FORMATTED_PHONE,
+  FORMATTED_PHONE_SECONDARY,
   services,
   productsList,
   projects,
@@ -56,7 +59,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Chouhan Firetech Services | Fire Safety Solutions" },
       {
         property: "og:description",
-        content: "Complete fire safety solutions for residential, commercial, industrial and institutional projects. Call 9417828887.",
+        content: "Complete fire safety solutions for residential, commercial, industrial and institutional projects. Call 9417828887 / 9877044142.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -70,7 +73,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           name: "Chouhan Firetech Services",
-          telephone: "+91 9417828887",
+          telephone: ["+91 9417828887", "+91 9877044142"],
           email: EMAIL,
           openingHours: "Mo-Su 00:00-23:59",
           address: {
@@ -691,22 +694,40 @@ function HomePage() {
                 </div>
 
                 {/* Direct Contact Links */}
-                <div className="space-y-3.5">
+                <div className="space-y-3">
                   <a
                     href={`tel:${PHONE}`}
-                    className="group relative flex items-start gap-4 rounded-2xl border border-zinc-800/90 bg-[#12141d] p-4.5 shadow-sm hover:border-red-500/50 transition-all block"
+                    className="group relative flex items-start gap-4 rounded-2xl border border-zinc-800/90 bg-[#12141d] p-4 shadow-sm hover:border-red-500/50 transition-all block"
                   >
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-600 text-white shadow-md shadow-red-600/30 group-hover:scale-105 transition-transform">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-600 text-white shadow-md shadow-red-600/30 group-hover:scale-105 transition-transform">
                       <PhoneCall className="h-5 w-5" />
                     </div>
                     <div className="flex-1">
                       <span className="text-[10px] font-extrabold uppercase tracking-wider text-red-400 block">
-                        24/7 Emergency Line
+                        Primary 24/7 Hotline
                       </span>
-                      <span className="text-lg font-black text-white group-hover:text-red-400 transition-colors block mt-0.5">
-                        +91 {PHONE}
+                      <span className="text-base sm:text-lg font-black text-white group-hover:text-red-400 transition-colors block mt-0.5">
+                        {FORMATTED_PHONE}
                       </span>
-                      <span className="text-xs text-zinc-400">Immediate technical response</span>
+                      <span className="text-xs text-zinc-400">Immediate technical dispatch</span>
+                    </div>
+                  </a>
+
+                  <a
+                    href={`tel:${PHONE_SECONDARY}`}
+                    className="group relative flex items-start gap-4 rounded-2xl border border-zinc-800/90 bg-[#12141d] p-4 shadow-sm hover:border-red-500/50 transition-all block"
+                  >
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-md shadow-red-600/30 group-hover:scale-105 transition-transform">
+                      <PhoneCall className="h-5 w-5" />
+                    </div>
+                    <div className="flex-1">
+                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-red-400 block">
+                        Secondary 24/7 Helpline
+                      </span>
+                      <span className="text-base sm:text-lg font-black text-white group-hover:text-red-400 transition-colors block mt-0.5">
+                        {FORMATTED_PHONE_SECONDARY}
+                      </span>
+                      <span className="text-xs text-zinc-400">Direct engineering consultation</span>
                     </div>
                   </a>
 

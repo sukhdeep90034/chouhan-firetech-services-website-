@@ -321,13 +321,20 @@ export function TrackOrderModal({
                 </p>
               </div>
 
-              <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+              <div className="flex flex-wrap items-center justify-center gap-2.5 pt-2">
                 <a
                   href="tel:9417828887"
-                  className="inline-flex items-center gap-2 rounded-xl border border-red-500/40 bg-red-950/30 px-4 py-2 text-xs font-bold text-red-400 hover:bg-red-900/50 transition-colors"
+                  className="inline-flex items-center gap-1.5 rounded-xl border border-red-500/40 bg-red-950/30 px-3.5 py-2 text-xs font-bold text-red-400 hover:bg-red-900/50 transition-colors"
                 >
                   <Phone className="h-3.5 w-3.5" />
-                  <span>Call Support: 94178-28887</span>
+                  <span>Call: 94178-28887</span>
+                </a>
+                <a
+                  href="tel:9877044142"
+                  className="inline-flex items-center gap-1.5 rounded-xl border border-red-500/40 bg-red-950/30 px-3.5 py-2 text-xs font-bold text-red-400 hover:bg-red-900/50 transition-colors"
+                >
+                  <Phone className="h-3.5 w-3.5" />
+                  <span>Call: 98770-44142</span>
                 </a>
                 {onNewBookingClick && (
                   <Button
@@ -769,13 +776,20 @@ export function TrackOrderModal({
                     <p className="text-zinc-300 leading-relaxed">
                       Because this booking was placed <strong>{cancellationStatus?.elapsedHours || 24}+ hours ago</strong>, technical inspections and hardware allocations are actively dispatched. Online cancellation is closed to prevent equipment disruption.
                     </p>
-                    <div className="pt-1 flex flex-wrap items-center gap-3">
+                    <div className="pt-1 flex flex-wrap items-center gap-2.5">
                       <a
                         href="tel:9417828887"
-                        className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 px-3.5 py-2 text-xs font-bold text-white hover:from-red-500 hover:to-rose-500 transition-all"
+                        className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 px-3 py-2 text-xs font-bold text-white hover:from-red-500 hover:to-rose-500 transition-all"
                       >
                         <PhoneCall className="h-3.5 w-3.5" />
-                        <span>Call Dispatch Desk: +91 94178-28887</span>
+                        <span>Call: 94178-28887</span>
+                      </a>
+                      <a
+                        href="tel:9877044142"
+                        className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-rose-600 to-red-700 px-3 py-2 text-xs font-bold text-white hover:from-rose-500 hover:to-red-600 transition-all"
+                      >
+                        <PhoneCall className="h-3.5 w-3.5" />
+                        <span>Call: 98770-44142</span>
                       </a>
                       <a
                         href={`https://wa.me/919417828887?text=${encodeURIComponent(

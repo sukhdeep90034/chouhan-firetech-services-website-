@@ -9,6 +9,7 @@ export interface SiteStatusConfig {
   title: string;
   message: string;
   emergencyPhone: string;
+  emergencyPhoneSecondary?: string;
   emergencyWhatsApp: string;
   lastUpdated: string;
   updatedBy: string;
@@ -23,6 +24,7 @@ const DEFAULT_STATUS: SiteStatusConfig = {
   message:
     "We are currently upgrading our fire safety infrastructure and digital portal to serve you better. Our 24/7 on-site emergency engineering and rapid refilling response teams remain fully active. For immediate assistance, please call or WhatsApp our emergency dispatch hotline directly.",
   emergencyPhone: "+919417828887",
+  emergencyPhoneSecondary: "+919877044142",
   emergencyWhatsApp: "+919417828887",
   lastUpdated: new Date().toISOString(),
   updatedBy: "Admin",

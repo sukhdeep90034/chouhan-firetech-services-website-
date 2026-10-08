@@ -58,7 +58,8 @@ export default {
             timestamp: new Date().toISOString(),
             company: "Chouhan Firetech Services",
             gstin: "03DVBPS7608H1ZI",
-            phone: "+91 9417828887",
+            phone: "+91 94178-28887 / +91 98770-44142",
+            phones: ["+91 9417828887", "+91 9877044142"],
             location: "Shop No. 1, Urna, Sub Division Banur, Mohali, Punjab",
           }),
           {

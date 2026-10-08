@@ -31,7 +31,11 @@ import projectPumproomImage from "@/assets/project-fire-pumproom.jpg";
 
 // Company contact & legal info
 export const PHONE = "9417828887";
-export const FORMATTED_PHONE = "+91 9417828887";
+export const FORMATTED_PHONE = "+91 94178-28887";
+export const PHONE_SECONDARY = "9877044142";
+export const FORMATTED_PHONE_SECONDARY = "+91 98770-44142";
+export const PHONES = [PHONE, PHONE_SECONDARY];
+export const FORMATTED_PHONES = [FORMATTED_PHONE, FORMATTED_PHONE_SECONDARY];
 export const EMAIL = "chouhanfiretech53@gmail.com";
 export const GSTIN = "03DVBPS7608H1ZI";
 export const ADDRESS = "Shop No. 1, Urna, Sub Division Banur, District Mohali, Punjab, India";
@@ -590,7 +594,7 @@ export const faqs: FaqData[] = [
     index: "10",
     category: "Free Quote & Survey",
     q: "How can I request a free on-site fire safety evaluation or an instant quotation?",
-    a: "You can call our 24/7 emergency hotline at +91 9417828887, start an instant 1-click WhatsApp consultation, or complete the online quotation form on this website. We provide 100% free preliminary site surveys, technical consultations, and BOQ estimates across Banur, Mohali, and Northern India with zero obligation.",
+    a: "You can call our 24/7 emergency hotlines at +91 94178-28887 or +91 98770-44142, start an instant 1-click WhatsApp consultation, or complete the online quotation form on this website. We provide 100% free preliminary site surveys, technical consultations, and BOQ estimates across Banur, Mohali, and Northern India with zero obligation.",
   },
 ];
 
@@ -699,7 +703,7 @@ export const COMPANY_POLICIES: CompanyPolicy[] = [
       {
         heading: "4. Customer Rights & Data Inquiries",
         points: [
-          "You may request deletion or revision of your contact details at any time by emailing us at chouhanfiretech53@gmail.com or calling +91 9417828887.",
+          "You may request deletion or revision of your contact details at any time by emailing us at chouhanfiretech53@gmail.com or calling +91 94178-28887 / +91 98770-44142.",
         ],
       },
     ],

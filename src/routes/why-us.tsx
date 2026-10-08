@@ -19,6 +19,7 @@ import {
   propertySolutions,
   GSTIN,
   PHONE,
+  PHONE_SECONDARY,
   WHATSAPP_BASE,
   WHATSAPP,
 } from "@/data/firetechData";
@@ -287,10 +288,17 @@ function WhyUsPage() {
             <div className="flex flex-wrap items-center gap-2.5 shrink-0">
               <a
                 href={`tel:${PHONE}`}
-                className="inline-flex items-center gap-2 rounded-xl bg-red-600 hover:bg-red-700 text-white px-4 py-2.5 text-xs font-bold transition-all shadow-md"
+                className="inline-flex items-center gap-2 rounded-xl bg-red-600 hover:bg-red-700 text-white px-3.5 py-2.5 text-xs font-bold transition-all shadow-md"
               >
                 <Phone className="h-3.5 w-3.5" />
                 <span>Call {PHONE}</span>
+              </a>
+              <a
+                href={`tel:${PHONE_SECONDARY}`}
+                className="inline-flex items-center gap-2 rounded-xl bg-red-700 hover:bg-red-800 text-white px-3.5 py-2.5 text-xs font-bold transition-all shadow-md"
+              >
+                <Phone className="h-3.5 w-3.5" />
+                <span>Call {PHONE_SECONDARY}</span>
               </a>
               <a
                 href={WHATSAPP}

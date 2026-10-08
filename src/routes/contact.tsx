@@ -17,6 +17,8 @@ import type { LeadItem } from "@/lib/leadVault";
 import {
   PHONE,
   FORMATTED_PHONE,
+  PHONE_SECONDARY,
+  FORMATTED_PHONE_SECONDARY,
   EMAIL,
   ADDRESS,
   MAPS_URL,
@@ -33,7 +35,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contact Chouhan Firetech Services in Banur & Mohali. Call 24/7 hotline +91 9417828887, chat on WhatsApp, or request an instant free fire safety quotation.",
+          "Contact Chouhan Firetech Services in Banur & Mohali. Call 24/7 hotlines +91 94178-28887 / +91 98770-44142, chat on WhatsApp, or request an instant free fire safety quotation.",
       },
     ],
   }),
@@ -92,10 +94,10 @@ function ContactPage() {
                 </p>
               </div>
 
-              {/* Phone Card */}
+              {/* Phone Card 1 (Primary) */}
               <a
                 href={`tel:${PHONE}`}
-                onClick={() => trackCallClick("Contact Page Phone")}
+                onClick={() => trackCallClick("Contact Page Phone 1")}
                 className="group relative flex items-start gap-4 rounded-2xl border border-zinc-800/90 bg-[#12141d] p-5 shadow-md hover:border-red-500/60 hover:-translate-y-0.5 transition-all block overflow-hidden"
               >
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-600 text-white shadow-md shadow-red-600/30 group-hover:scale-105 transition-transform">
@@ -104,7 +106,7 @@ function ContactPage() {
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] font-extrabold uppercase tracking-wider text-red-400 block">
-                      24/7 Emergency Line
+                      Primary 24/7 Hotline
                     </span>
                     <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-500/30">
                       <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -114,7 +116,33 @@ function ContactPage() {
                   <span className="text-lg font-black text-white group-hover:text-red-400 transition-colors block mt-0.5">
                     {FORMATTED_PHONE}
                   </span>
-                  <span className="text-xs text-zinc-400">Tap to call emergency helpline directly</span>
+                  <span className="text-xs text-zinc-400">Tap to call primary helpline directly</span>
+                </div>
+              </a>
+
+              {/* Phone Card 2 (Secondary) */}
+              <a
+                href={`tel:${PHONE_SECONDARY}`}
+                onClick={() => trackCallClick("Contact Page Phone 2")}
+                className="group relative flex items-start gap-4 rounded-2xl border border-zinc-800/90 bg-[#12141d] p-5 shadow-md hover:border-red-500/60 hover:-translate-y-0.5 transition-all block overflow-hidden"
+              >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-md shadow-red-600/30 group-hover:scale-105 transition-transform">
+                  <Phone className="h-5 w-5" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-red-400 block">
+                      Secondary 24/7 Helpline
+                    </span>
+                    <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-500/30">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      Active Now
+                    </span>
+                  </div>
+                  <span className="text-lg font-black text-white group-hover:text-red-400 transition-colors block mt-0.5">
+                    {FORMATTED_PHONE_SECONDARY}
+                  </span>
+                  <span className="text-xs text-zinc-400">Tap to call alternate helpline directly</span>
                 </div>
               </a>
 

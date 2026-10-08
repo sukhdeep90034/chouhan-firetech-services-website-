@@ -21,6 +21,7 @@ import fireTruckImage from "@/assets/fire-truck-about.jpg";
 import heroImage from "@/assets/hero-fire-safety.jpg";
 import {
   PHONE,
+  PHONE_SECONDARY,
   FORMATTED_PHONE,
   ADDRESS,
   MAPS_URL,
@@ -257,10 +258,18 @@ function AboutPage() {
 
               <a
                 href={`tel:${PHONE}`}
-                className="inline-flex items-center gap-2 rounded-xl border border-zinc-700 bg-zinc-900/90 hover:bg-zinc-800 px-5 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white transition-all"
+                className="inline-flex items-center gap-2 rounded-xl border border-zinc-700 bg-zinc-900/90 hover:bg-zinc-800 px-4 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white transition-all"
               >
                 <Phone className="h-4 w-4 text-red-500" />
                 <span>Call: {PHONE}</span>
+              </a>
+
+              <a
+                href={`tel:${PHONE_SECONDARY}`}
+                className="inline-flex items-center gap-2 rounded-xl border border-zinc-700 bg-zinc-900/90 hover:bg-zinc-800 px-4 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white transition-all"
+              >
+                <Phone className="h-4 w-4 text-red-400" />
+                <span>Call: {PHONE_SECONDARY}</span>
               </a>
 
               <a

@@ -21,6 +21,7 @@ import { ServiceModal } from "@/components/modals/ServiceModal";
 import {
   services,
   PHONE,
+  PHONE_SECONDARY,
   WHATSAPP,
   WHATSAPP_BASE,
   type ServiceItem,
@@ -242,13 +243,23 @@ function ServicesPage() {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
 
-                <a
-                  href={`tel:${PHONE}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 py-3.5 px-6 text-xs sm:text-sm font-bold uppercase tracking-wider text-white transition-all"
-                >
-                  <Phone className="h-4 w-4 text-red-500" />
-                  <span>Call Hotline: {PHONE}</span>
-                </a>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <a
+                    href={`tel:${PHONE}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 py-3 px-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-white transition-all"
+                  >
+                    <Phone className="h-4 w-4 text-red-500" />
+                    <span>Call: {PHONE}</span>
+                  </a>
+
+                  <a
+                    href={`tel:${PHONE_SECONDARY}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 py-3 px-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-white transition-all"
+                  >
+                    <Phone className="h-4 w-4 text-red-400" />
+                    <span>Call: {PHONE_SECONDARY}</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

@@ -212,7 +212,7 @@ export function trackCallClick(source: string) {
     id: `evt_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
     type: "call_click",
     source,
-    label: `Direct Call to 9417828887 from ${source}`,
+    label: `Direct Helpline Call from ${source}`,
     timestamp: new Date().toISOString(),
     dateFormatted: new Date().toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit", second: "2-digit" }),
     device: getDeviceType(),

@@ -1042,7 +1042,7 @@ export default function AdminPage() {
               <span className="ml-2 text-xs text-zinc-400 font-semibold">Call Inquiries</span>
             </div>
             <div className="mt-2 text-[11px] text-zinc-400 pt-2 border-t border-zinc-800/80">
-              <span>Direct dials to 9417828887</span>
+              <span>Direct dials to 9417828887 / 9877044142</span>
             </div>
           </div>
 
@@ -2126,7 +2126,7 @@ export default function AdminPage() {
                 <div className="flex items-center gap-2">
                   <Phone className="h-4 w-4 text-amber-400" />
                   <h3 className="text-sm font-bold uppercase tracking-wider text-amber-400">
-                    Direct Call Inquiries (9417828887)
+                    Direct Call Inquiries (9417828887 / 9877044142)
                   </h3>
                 </div>
                 <div className="rounded-xl border border-amber-500/30 bg-amber-950/40 px-3 py-1 text-xs font-bold text-amber-300">

@@ -21,6 +21,8 @@ import logoImage from "@/assets/chouhan-firetech-logo.png";
 import {
   PHONE,
   FORMATTED_PHONE,
+  PHONE_SECONDARY,
+  FORMATTED_PHONE_SECONDARY,
   EMAIL,
   GSTIN,
   ADDRESS,
@@ -121,14 +123,22 @@ function MaintenanceModeView({
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <a
               href={`tel:${PHONE}`}
-              onClick={() => trackCallClick("Maintenance Header Call")}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-red-500/40 bg-red-950/40 px-3.5 py-1.5 text-xs font-bold text-red-400 hover:bg-red-900/50 hover:text-white transition-colors"
+              onClick={() => trackCallClick("Maintenance Header Call 1")}
+              className="inline-flex items-center gap-1.5 rounded-lg border border-red-500/40 bg-red-950/40 px-3 py-1.5 text-xs font-bold text-red-400 hover:bg-red-900/50 hover:text-white transition-colors"
             >
               <Phone className="h-3.5 w-3.5" />
-              <span>+91 94178-28887</span>
+              <span>{FORMATTED_PHONE}</span>
+            </a>
+            <a
+              href={`tel:${PHONE_SECONDARY}`}
+              onClick={() => trackCallClick("Maintenance Header Call 2")}
+              className="inline-flex items-center gap-1.5 rounded-lg border border-red-500/40 bg-red-950/40 px-3 py-1.5 text-xs font-bold text-red-400 hover:bg-red-900/50 hover:text-white transition-colors"
+            >
+              <Phone className="h-3.5 w-3.5" />
+              <span>{FORMATTED_PHONE_SECONDARY}</span>
             </a>
           </div>
         </div>
@@ -169,14 +179,23 @@ function MaintenanceModeView({
               </div>
             </div>
 
-            <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
               <a
                 href={`tel:${PHONE}`}
-                onClick={() => trackCallClick("Maintenance Direct Call")}
-                className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 px-4 py-3.5 text-xs sm:text-sm font-black uppercase tracking-wider text-white shadow-lg shadow-red-600/30 hover:from-red-500 hover:to-rose-500 transition-all cursor-pointer"
+                onClick={() => trackCallClick("Maintenance Direct Call 1")}
+                className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 px-3 py-3.5 text-xs sm:text-sm font-black uppercase tracking-wider text-white shadow-lg shadow-red-600/30 hover:from-red-500 hover:to-rose-500 transition-all cursor-pointer"
               >
                 <PhoneCall className="h-4 w-4" />
-                <span>Call Direct: +91 94178-28887</span>
+                <span>Call: 94178-28887</span>
+              </a>
+
+              <a
+                href={`tel:${PHONE_SECONDARY}`}
+                onClick={() => trackCallClick("Maintenance Direct Call 2")}
+                className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-rose-600 to-red-700 px-3 py-3.5 text-xs sm:text-sm font-black uppercase tracking-wider text-white shadow-lg shadow-red-600/30 hover:from-rose-500 hover:to-red-600 transition-all cursor-pointer"
+              >
+                <PhoneCall className="h-4 w-4" />
+                <span>Call: 98770-44142</span>
               </a>
 
               <a
@@ -636,21 +655,34 @@ export function SiteLayout({
                 </div>
               </a>
 
-              {/* Direct Call touchpoint */}
-              <a
-                href={`tel:${PHONE}`}
-                className="flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 hover:bg-white/[0.05] transition-colors group"
-              >
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-600/15 border border-red-500/30 text-red-500 group-hover:scale-110 group-hover:bg-red-600 group-hover:text-white transition-all shadow-sm">
+              {/* Direct Call touchpoints (Dual Helplines) */}
+              <div className="flex items-center gap-2 rounded-lg border border-red-500/25 bg-red-950/20 px-3 py-1.5 shadow-sm">
+                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-red-600/20 text-red-500">
                   <Phone className="h-3.5 w-3.5" />
                 </div>
                 <div className="text-left leading-tight">
-                  <span className="block text-[10px] text-zinc-400 font-medium">Emergency Call</span>
-                  <span className="block text-xs font-bold text-white group-hover:text-red-400 transition-colors">
-                    {PHONE}
-                  </span>
+                  <span className="block text-[9px] uppercase tracking-wider text-red-400 font-bold">24/7 Hotlines</span>
+                  <div className="flex items-center gap-1.5 text-xs font-extrabold text-white">
+                    <a
+                      href={`tel:${PHONE}`}
+                      onClick={() => trackCallClick("Header Call 1")}
+                      className="hover:text-red-400 transition-colors"
+                      title="Call Helpline: 9417828887"
+                    >
+                      {PHONE}
+                    </a>
+                    <span className="text-zinc-600">•</span>
+                    <a
+                      href={`tel:${PHONE_SECONDARY}`}
+                      onClick={() => trackCallClick("Header Call 2")}
+                      className="hover:text-red-400 transition-colors"
+                      title="Call Helpline: 9877044142"
+                    >
+                      {PHONE_SECONDARY}
+                    </a>
+                  </div>
                 </div>
-              </a>
+              </div>
 
               {/* Track Order CTA */}
               <button
@@ -935,14 +967,25 @@ export function SiteLayout({
 
             {/* Mobile Bottom Quick Actions */}
             <div className="pt-6 border-t border-zinc-800/80 space-y-3 mt-4">
-              <a
-                href={`tel:${PHONE}`}
-                onClick={() => trackCallClick("Mobile Menu Drawer")}
-                className="flex items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-red-600 to-red-700 py-3 text-sm font-bold text-white shadow-lg"
-              >
-                <Phone className="h-4 w-4" />
-                <span>Call 24/7 Hotline: {PHONE}</span>
-              </a>
+              <div className="grid grid-cols-2 gap-2">
+                <a
+                  href={`tel:${PHONE}`}
+                  onClick={() => trackCallClick("Mobile Menu Drawer 1")}
+                  className="flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-red-600 to-red-700 py-3 text-xs font-bold text-white shadow-lg"
+                >
+                  <Phone className="h-3.5 w-3.5" />
+                  <span>Call {PHONE}</span>
+                </a>
+
+                <a
+                  href={`tel:${PHONE_SECONDARY}`}
+                  onClick={() => trackCallClick("Mobile Menu Drawer 2")}
+                  className="flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-red-600 to-red-700 py-3 text-xs font-bold text-white shadow-lg"
+                >
+                  <Phone className="h-3.5 w-3.5" />
+                  <span>Call {PHONE_SECONDARY}</span>
+                </a>
+              </div>
 
               <div className="grid grid-cols-2 gap-2.5">
                 <a
@@ -1182,12 +1225,17 @@ export function SiteLayout({
                   <ChevronRight className="h-3 w-3" />
                 </a>
               </div>
-              <p>
-                <strong className="text-white block">24/7 Hotline:</strong>
-                <a href={`tel:${PHONE}`} className="text-red-500 font-bold hover:underline">
-                  {FORMATTED_PHONE}
-                </a>
-              </p>
+              <div>
+                <strong className="text-white block mb-0.5">24/7 Hotlines:</strong>
+                <div className="space-y-0.5">
+                  <a href={`tel:${PHONE}`} className="text-red-500 font-bold hover:underline block">
+                    {FORMATTED_PHONE}
+                  </a>
+                  <a href={`tel:${PHONE_SECONDARY}`} className="text-red-400 font-bold hover:underline block">
+                    {FORMATTED_PHONE_SECONDARY}
+                  </a>
+                </div>
+              </div>
               <p>
                 <strong className="text-white block">Email:</strong>
                 <a href={`mailto:${EMAIL}`} className="hover:text-red-500 transition-colors">
@@ -1264,14 +1312,23 @@ export function SiteLayout({
       </footer>
 
       {/* Sticky Mobile Bottom Bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 grid h-14 grid-cols-3 border-t border-zinc-800 bg-[#0e1015] md:hidden shadow-xl">
+      <div className="fixed inset-x-0 bottom-0 z-40 grid h-14 grid-cols-4 border-t border-zinc-800 bg-[#0e1015] md:hidden shadow-xl">
         <a
           href={`tel:${PHONE}`}
-          onClick={() => trackCallClick("Mobile Bar")}
+          onClick={() => trackCallClick("Mobile Bar 1")}
           className="flex flex-col items-center justify-center gap-0.5 border-r border-zinc-800 text-[10px] font-bold uppercase text-white hover:bg-zinc-800"
         >
           <Phone className="h-4 w-4 text-red-500" />
-          <span>Call Now</span>
+          <span>Call 1</span>
+        </a>
+
+        <a
+          href={`tel:${PHONE_SECONDARY}`}
+          onClick={() => trackCallClick("Mobile Bar 2")}
+          className="flex flex-col items-center justify-center gap-0.5 border-r border-zinc-800 text-[10px] font-bold uppercase text-white hover:bg-zinc-800"
+        >
+          <Phone className="h-4 w-4 text-red-400" />
+          <span>Call 2</span>
         </a>
 
         <a
