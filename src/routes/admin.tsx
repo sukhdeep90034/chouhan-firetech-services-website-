@@ -479,7 +479,6 @@ export default function AdminPage() {
 
   // 1. LOGIN SCREEN IF NOT AUTHENTICATED
   if (!isAuthenticated) {
-    const creds = getStoredCredentials();
     return (
       <div className="min-h-screen bg-[#07080b] flex items-center justify-center px-4 py-12 relative overflow-hidden text-zinc-100">
         {/* Glow ambient backgrounds */}
@@ -530,7 +529,7 @@ export default function AdminPage() {
                 <User className="absolute left-3 top-3 h-4 w-4 text-zinc-500" />
                 <Input
                   type="text"
-                  placeholder="admin or chouhan_admin"
+                  placeholder="Enter administrator username"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   className="h-11 border-zinc-800 bg-[#141722] pl-10 text-white placeholder:text-zinc-600 focus:border-red-500"
@@ -568,25 +567,6 @@ export default function AdminPage() {
             >
               Sign In to Admin Dashboard
             </Button>
-
-            {/* Quick Demo Helper */}
-            <div className="mt-4 rounded-xl border border-zinc-800 bg-[#0a0c12] p-3 text-[11px] text-zinc-400 space-y-1">
-              <span className="font-bold text-zinc-300 block">Default Secure Credentials:</span>
-              <div className="flex justify-between items-center">
-                <span>Username: <strong className="text-zinc-200 font-mono">{creds.username}</strong></span>
-                <span>Password: <strong className="text-zinc-200 font-mono">Chouhan@FireTech#2026!</strong></span>
-              </div>
-              <button
-                type="button"
-                onClick={() => {
-                  setUsername(creds.username);
-                  setPassword(creds.passwordRaw);
-                }}
-                className="mt-1 text-xs text-red-400 hover:underline font-semibold block"
-              >
-                Auto-fill credentials
-              </button>
-            </div>
           </form>
 
           <div className="mt-6 text-center">
